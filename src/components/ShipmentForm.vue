@@ -57,6 +57,16 @@ const form = reactive<UpdateShipmentForm>({
 
 function onSubmit(e: Event) {
   emit('onSubmit', formToUpdateString(form));
+  resetForm();
+}
+
+function resetForm() {
+  form.updateType = 'created';
+  form.id = '';
+  form.shipmentType = 'standard';
+  form.note = undefined;
+  form.location = undefined;
+  form.expectedDeliveryTimestamp = undefined;
 }
 </script>
 <template>
